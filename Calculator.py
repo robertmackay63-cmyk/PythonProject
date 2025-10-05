@@ -41,7 +41,10 @@ while not Finished:
         except ValueError:
             print("Invalid input. Try again.")
     if operation == 1:
-        print(value1, "/", value2, "=", divide(value1, value2))
+        try:
+            print(value1, "/", value2, "=", divide(value1, value2))
+        except ZeroDivisionError:
+            print("Can't divide by zero")
     elif operation == 2:
         print(value1, "*", value2, "=", multiplication(value1, value2))
     elif operation == 3:
