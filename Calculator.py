@@ -13,14 +13,14 @@ def subtraction(num1, num2):
 def divide(num1, num2):
     return num1 / num2
 
-
-while True:
+Finished = False
+while not Finished:
     value1 = int(input("Enter 1st number: "))
     value2 = int(input("Enter 2nd number: "))
 
-    print("Select operation 1-Division, 2-Multiplication, 3-Addition, 4-Subtraction")
+    print("Select operation 1-Division, 2-Multiplication, 3-Addition, 4-Subtraction, 5-Exit")
 
-    operation = int(input("Choose operation 1/2/3/4: "))
+    operation = int(input("Choose operation 1/2/3/4/5: "))
     if operation == 1:
         print(value1, "/", value2, "=", divide(value1, value2))
     elif operation == 2:
@@ -29,5 +29,8 @@ while True:
         print(value1, "+", value2, "=", addition(value1, value2))
     elif operation == 4:
         print(value1, "-", value2, "=", subtraction(value1, value2))
+    elif operation == 5:
+        print("BYE")
+        Finished = True
     else:
         print("Enter correct operation")
