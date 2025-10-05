@@ -19,8 +19,14 @@ while not Finished:
     value2 = int(input("Enter 2nd number: "))
 
     print("Select operation 1-Division, 2-Multiplication, 3-Addition, 4-Subtraction, 5-Exit")
-
-    operation = int(input("Choose operation 1/2/3/4/5: "))
+    while True:
+        try:
+            operation = int(input("Choose operation 1/2/3/4/5: "))
+            if operation <1 or operation>5:
+                raise ValueError ('Not in range 1-5')
+            break
+        except ValueError:
+            print("Invalid input. Try again.")
     if operation == 1:
         print(value1, "/", value2, "=", divide(value1, value2))
     elif operation == 2:
@@ -29,8 +35,6 @@ while not Finished:
         print(value1, "+", value2, "=", addition(value1, value2))
     elif operation == 4:
         print(value1, "-", value2, "=", subtraction(value1, value2))
-    elif operation == 5:
+    else:
         print("BYE")
         Finished = True
-    else:
-        print("Enter correct operation")
