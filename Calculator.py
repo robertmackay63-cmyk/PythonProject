@@ -1,3 +1,6 @@
+from operator import truediv
+
+
 def multiplication(num1, num2):
     return num1 * num2
 
@@ -15,8 +18,18 @@ def divide(num1, num2):
 
 Finished = False
 while not Finished:
-    value1 = int(input("Enter 1st number: "))
-    value2 = int(input("Enter 2nd number: "))
+    while True:
+        try:
+            value1 = int(input("Enter 1st number: "))
+            break
+        except ValueError:
+            print('Try Again')
+    while True:
+        try:
+            value2 = int(input("Enter 2nd number: "))
+            break
+        except ValueError:
+            print('Try again')
 
     print("Select operation 1-Division, 2-Multiplication, 3-Addition, 4-Subtraction, 5-Exit")
     while True:
